@@ -1,0 +1,23 @@
+<app-header [titulo]="titulo" [menu]="false"></app-header>
+
+<ion-content>
+  <form (ngSubmit)="itemGuardarEditar()" [formGroup]="registroForm">
+    <ion-list lines="full" class="ion-no-margin grid md:grid-cols-2 grid-cols-1 md:gap-5 gap-1">
+      <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input placeholder="Nombre" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Color</ion-label>
+        <ion-input placeholder="Color" formControlName="color" type="color"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Activo</ion-label>
+        <ion-checkbox color="primary" name="estatus" formControlName="estatus" slot="start"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <section class="ion-text-center">
+      <ion-button type="submit" [disabled]="registroForm.invalid" expand="block" color="success">{{ (nuevo) ? 'Guardar' : 'Modificar' }}</ion-button>
+    </section>
+  </form>
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-item-sliding *ngFor="let cli of clientes; let i = index;">
+  <ion-item>
+    <ion-label>
+      <h2>{{ cli.nombre }} {{ cli.apellidos }}</h2>
+      <p><strong>Teléfono: </strong>{{ cli.telefono }}</p>
+      <p><strong>Correo: </strong>{{ cli.correo }}</p>
+      <ion-badge color="primary">Activo</ion-badge>
+    </ion-label>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="primary" (click)="openSheetModal(cli)">
+      <ion-icon slot="icon-only" name="pencil"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger" (click)="itemEliminar(cli, i)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>

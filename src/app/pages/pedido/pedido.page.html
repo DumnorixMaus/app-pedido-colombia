@@ -1,0 +1,9 @@
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+<app-list-pedido [pedidos]="lista_registro"></app-list-pedido>
+<ion-fab class="fixed" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="openSheetModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

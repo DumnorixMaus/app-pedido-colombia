@@ -1,3 +1,60 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane when="md" contentId="main">
+    <ion-menu side="end" menuId="first" contentId="main">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Menú</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+        <ion-list>
+          <ion-menu-toggle [routerLink]="['/tabs/tab1']" routerLinkActive="router-link-active" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="cart-outline" slot="start"></ion-icon>
+              <ion-label>Pedidos</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/tabs/tab2']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="people-outline" slot="start"></ion-icon>
+              <ion-label>Clientes</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/tabs/tab3']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
+              <ion-label>Reporte</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/proveedor']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="people-circle-outline" slot="start"></ion-icon>
+              <ion-label>Proveedores</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/producto']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="fast-food-outline" slot="start"></ion-icon>
+              <ion-label>Productos</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/categoria']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="list-outline" slot="start"></ion-icon>
+              <ion-label>Categorías</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle [routerLink]="['/umedida']" autoHide="false">
+            <ion-item detail>
+              <ion-icon name="thermometer-outline" slot="start"></ion-icon>
+              <ion-label>Unidad de medida</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

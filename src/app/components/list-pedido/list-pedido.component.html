@@ -1,0 +1,23 @@
+
+<ion-item-sliding *ngFor="let ped of pedidos; let i = index;">
+  <ion-item>
+    <ion-label>
+      <h2><strong>Folio: </strong>{{ ped.folio }}</h2>
+      <p><strong>Cliente: </strong> {{ ped.cliente?.nombre }} {{ ped.cliente?.apellidos }}</p>
+      <p><strong>Monto: </strong> {{ ped.monto_total | currency }}</p>
+      <ion-badge color="primary">{{ ped.estatus | estatusPedido }}</ion-badge>
+    </ion-label>
+    <ion-note slot="end">
+      {{ ped.tipo | tipoPedido }}
+    </ion-note>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option color="primary" (click)="openSheetModal(ped)">
+      <ion-icon slot="icon-only" name="pencil"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger" (click)="itemEliminar(ped, i)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
+

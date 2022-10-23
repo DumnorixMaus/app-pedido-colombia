@@ -1,0 +1,13 @@
+<app-header [titulo]="titulo" [menu]="true"></app-header>
+<ion-content [fullscreen]="true">
+  <app-header-content [titulo]="titulo"></app-header-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <app-list-proveedor [proveedores]="lista_registro"></app-list-proveedor>
+  <ion-fab class="fixed" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openSheetModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
